@@ -29,11 +29,11 @@ def download_file(url, file_path):
     if incomplete_download:
         raise Exception("Incomplete download")
 
-def sequential_downloader(vers,fns, target_dir, url):
+def sequential_downloader(version, fns, target_dir):
     os.makedirs(target_dir, exist_ok=True)
     for fn in fns:
+      url = "https://github.com/hse-aml/intro-to-dl/releases/download/{0}/{1}".format(version, fn)
       file_path = os.path.join(target_dir, fn)
-      url = url.format(vers, fn)
       download_file(url, file_path)
 
 def use_simple_tqdm():
