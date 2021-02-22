@@ -6,6 +6,7 @@ import requests
 import os
 #from __future__ import print_function
 import tqdm
+import pickle
 tqdm.monitor_interval = 0
 
 def download_file(url, file_path):
